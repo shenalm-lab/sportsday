@@ -148,8 +148,8 @@
         <p id="evDate"></p>
         <form id="f-enter" autocomplete="off" novalidate>
           <label for="empId">Employee Number</label>
-          <input id="empId" class="big tnum" type="text" inputmode="text" autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off" placeholder="e.g. DMT625" maxlength="12" aria-describedby="idHint">
-          <div class="hint" id="idHint">Enter your Employee Number exactly as it appears on your staff ID card, for example <b>DMT625</b>, <b>106031</b> or <b>600107</b>.</div>
+          <input id="empId" class="big tnum" type="text" inputmode="text" autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off" placeholder="e.g. DMT203" maxlength="12" aria-describedby="idHint">
+          <div class="hint" id="idHint">Enter your Employee Number exactly as it appears on your staff ID card, for example <b>DMT203</b>, <b>106099</b> or <b>600199</b>.</div>
           <div class="err" id="enterErr" role="alert"></div>
           <button class="btn" id="btnFind" type="submit">Continue</button>
         </form>
@@ -475,7 +475,7 @@
   function find(){
     var id = $('empId').value.trim();
     if (!id){ show('s-enter'); $('enterErr').textContent = 'Please enter your Employee Number.'; return; }
-    if (!/^[A-Za-z0-9]{3,12}$/.test(id)){ $('enterErr').textContent = 'An Employee Number contains letters and numbers only, for example DMT625 or 106031.'; return; }
+    if (!/^[A-Za-z0-9]{3,12}$/.test(id)){ $('enterErr').textContent = 'An Employee Number contains letters and numbers only, for example DMT203 or 106099.'; return; }
     $('enterErr').textContent = '';
     pending = find;
     busy($('btnFind'), true, LOCATION_ON && !pos ? 'Confirming your location…' : 'Looking up your details…');
